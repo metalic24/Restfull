@@ -15,7 +15,8 @@ public class Motto {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() throws IOException {
 
-        String filePath = "/pliki/motta.txt";
+
+        String filePath = "target/Restfull-1.0-SNAPSHOT/WEB-INF/classes/pliki/motta.txt";
         String linia = "Witaj";
         BufferedReader fileReader = null;
 
