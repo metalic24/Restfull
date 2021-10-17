@@ -1,0 +1,62 @@
+[{
+    "numer_pytania":"pytanie 1",
+    "pytanie":"ile wynosi 2+2?",
+    "odp_a":"5",
+    "odp_b":"6",
+    "odp_c":"100",
+    "odp_d":"4",
+    "poprawna":"d"
+    
+
+
+},
+{
+    "numer_pytania":"pytanie 2",
+    "pytanie":"ile jest miesiecy w roku?",
+    "odp_a":"10",
+    "odp_b":"12",
+    "odp_c":"11",
+    "odp_d":"13",
+    "poprawna":"b"
+    
+
+
+},
+{
+    "numer_pytania":"pytanie 3",
+    "pytanie":"Jakie miasto jest stolicą Polski?",
+    "odp_a":"Warszawa",
+    "odp_b":"Poznań",
+    "odp_c":"Radom",
+    "odp_d":"Sosnowiec",
+    "poprawna":"a"
+    
+
+
+},
+{
+    "numer_pytania":"pytanie 4",
+    "pytanie":"Ile wynosi sin(pi/2)?",
+    "odp_a":"0",
+    "odp_b":"1",
+    "odp_c":"100",
+    "odp_d":"-1",
+    "poprawna":"b"
+    
+
+
+},
+{
+    "numer_pytania":"pytanie 5",
+    "pytanie":"Która planetą od Słońca jest Ziemia?",
+    "odp_a":"2",
+    "odp_b":"3",
+    "odp_c":"4",
+    "odp_d":"5",
+    "poprawna":"b"
+    
+
+
+}
+
+]

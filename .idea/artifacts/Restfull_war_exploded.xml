@@ -40,6 +40,7 @@
           <element id="library" level="project" name="Maven: org.glassfish.main.core:glassfish:5.0" />
           <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-core:2.5.0-b44" />
           <element id="library" level="project" name="Maven: org.glassfish.main.common:simple-glassfish-api:5.0" />
+          <element id="library" level="project" name="Maven: org.json:json:20190722" />
         </element>
       </element>
       <element id="directory" name="META-INF">

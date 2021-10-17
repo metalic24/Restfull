@@ -4,10 +4,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
 
 @Path("/motto")
 public class Motto {
@@ -15,8 +13,10 @@ public class Motto {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() throws IOException {
 
+        //TODO odczyt z pliku sciezka wzgledna
+       // InputStream path = this.getClass().getResourceAsStream("/motta.txt");
 
-        String filePath = "target/Restfull-1.0-SNAPSHOT/WEB-INF/classes/pliki/motta.txt";
+        String filePath = "C:\\apps\\Restfull\\src\\main\\resources\\pliki\\motta.txt";
         String linia = "Witaj";
         BufferedReader fileReader = null;
 
