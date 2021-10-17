@@ -41,6 +41,9 @@
           <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-core:2.5.0-b44" />
           <element id="library" level="project" name="Maven: org.glassfish.main.common:simple-glassfish-api:5.0" />
           <element id="library" level="project" name="Maven: org.json:json:20190722" />
+          <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" />
+          <element id="library" level="project" name="Maven: junit:junit:4.10" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
