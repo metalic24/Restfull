@@ -5,7 +5,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.io.*;
-import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
+import java.util.Calendar;
 
 @Path("/motto")
 public class Motto {
@@ -13,27 +15,32 @@ public class Motto {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() throws IOException {
 
-        //TODO odczyt z pliku sciezka wzgledna
-       // InputStream path = this.getClass().getResourceAsStream("/motta.txt");
 
-        String filePath = "C:\\apps\\Restfull\\src\\main\\resources\\pliki\\motta.txt";
-        String linia = "Witaj";
-        BufferedReader fileReader = null;
 
-        try {
-            fileReader = new BufferedReader(new FileReader(filePath));
-            linia = fileReader.readLine();
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fileReader != null) {
-                fileReader.close();
-            }
+        Motto obj = new Motto();
+        Calendar cal = Calendar.getInstance();
+        int dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);
+
+        StringBuilder out = new StringBuilder();
+        InputStream inputStream = obj.getClass()
+                .getClassLoader()
+                .getResourceAsStream("motta.txt");
+        String line = null;
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            //każdego dnia pojawi się inne motto, ale będzie się pojawiać co 12 dni
+        for (int i=0; i<dayOfMonth%12;i++)
+        {
+            line = reader.readLine();
         }
 
-        return linia;
+
+        }
+
+        ByteBuffer buffer = StandardCharsets.UTF_8.encode(line);
+
+        String utf8EncodedString = StandardCharsets.UTF_8.decode(buffer).toString();
+
+        return utf8EncodedString;
     }
 }

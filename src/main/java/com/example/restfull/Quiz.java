@@ -6,19 +6,28 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 @Path("/quiz")
 public class Quiz {
 
-    //TODO sciezka wzgledna
-    File file = new File("C:\\apps\\Restfull\\src\\main\\resources\\pliki\\quiz.json");
+
 
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public File hello() throws IOException {
+    public InputStream hello() throws IOException {
 
 
-        return file;
+
+        Quiz obj = new Quiz();
+
+        StringBuilder out = new StringBuilder();
+        InputStream inputStream = obj.getClass()
+                .getClassLoader()
+                .getResourceAsStream("quiz.json");
+
+        return inputStream;
+
     }
 }
