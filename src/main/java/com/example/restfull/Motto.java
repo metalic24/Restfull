@@ -12,7 +12,7 @@ import java.util.Calendar;
 @Path("/motto")
 public class Motto {
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public String hello() throws IOException {
 
         Motto obj = new Motto();
@@ -23,21 +23,20 @@ public class Motto {
         InputStream inputStream = obj.getClass()
                 .getClassLoader()
                 .getResourceAsStream("motta.txt");
-        String line = null;
+
+        String value = null;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             //każdego dnia pojawi się inne motto, ale będzie się pojawiać co 12 dni
         for (int i=0; i<dayOfMonth%12;i++)
         {
-            line = reader.readLine();
+            byte ptext[] = reader.readLine().getBytes();
+            value = new String(ptext, "UTF-8");
+
         }
         }
 
 
-        ByteBuffer buffer = StandardCharsets.UTF_8.encode(line);
-
-        String utf8EncodedString = StandardCharsets.UTF_8.decode(buffer).toString();
-
-        return utf8EncodedString;
+        return value;
     }
 }
