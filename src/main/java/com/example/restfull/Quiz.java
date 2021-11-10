@@ -26,7 +26,7 @@ public class Quiz {
         InputStream inputStream = obj.getClass()
                 .getClassLoader()
                 .getResourceAsStream("quiz.json");
-
+        //zwróbenie pliku json
         return inputStream;
 
     }

@@ -26,22 +26,28 @@ public class Motto {
 
         String value = null;
 
+        //odczyt z pliku
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             //każdego dnia pojawi się inne motto, ale będzie się pojawiać co 12 dni
-        for (int i=0; i<1+dayOfMonth%12;i++)
-        {
-            byte ptext[] = reader.readLine().getBytes();
-            value = new String(ptext, "UTF-8");
+
+             for (int i=0; i<1+dayOfMonth%12;i++)
+             {
+                 byte ptext[] = reader.readLine().getBytes();
+                 value = new String(ptext, "UTF-8");
+
+
+
+             }
 
 
 
         }
-        }
 
+        //zamiana stringa na objekt json
         JSONObject json = new JSONObject();
 
-       json.put("motto",value);
-
+        json.put("motto",value);
+        //zwrócenie objektu json w postaci stringa 
         return json.toString();
     }
 }
